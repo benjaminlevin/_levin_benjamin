@@ -2,6 +2,7 @@ using:
     Django
     SQLite
     + other specified requirements
+        using a CDN for bootstrap
 
 only install required to run web app is Django v1.10 (see requirements.txt)
 // pip install Django==1.10 
