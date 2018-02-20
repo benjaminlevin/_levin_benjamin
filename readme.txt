@@ -4,7 +4,8 @@ using:
     + other specified requirements
 
 only install required to run web app is Django v1.10 (see requirements.txt)
-// pip install Django==1.10
+// pip install Django==1.10 
+    // pip must be installed: https://pip.pypa.io/en/stable/installing/
 
 once Django is installed, run app locally by running 'python manage.py runserver' in root directory
 (application runs at localhost:8000)
