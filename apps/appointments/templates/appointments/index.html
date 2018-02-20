@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>appointments</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'appointments/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <form id='newAppointmentFormO' action='/'>
+                {% csrf_token %}
+                <input id='showAppointmentForm' type='submit' value='NEW'/>
+            </form>
+            <form id="newAppointmentFormI" action='/submit_appointment' method='post'> 
+                {% csrf_token %}
+                <input id='submitNewAppointment' type='submit' value='ADD' /> 
+                <button id='hideAppointmentForm'>CANCEL</button>
+                <br> 
+                <label for='date'>DATE</input> 
+                <input name='date' type='date' /> 
+                <br> 
+                <label for='time'>TIME</input> 
+                <input name='time' type='time' /> 
+                <br> 
+                <label for='desc'>DESC</input> 
+                <input name='desc' type='text' />
+            </form>
+        </div>
+        <form id='searchAppointments' action='/search'> 
+            {% csrf_token %}
+            <input id='search' name='search' type='text' />
+            <input id='searchButton' type='submit' value='SEARCH' />
+        </form>
+        <div id='appointments'></div>
+        <script src="{% static 'appointments/script.js' %}"></script>
+    </body>
+</html>
